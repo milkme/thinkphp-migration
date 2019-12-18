@@ -1,5 +1,5 @@
 <?php
-namespace ke\phinx;
+namespace milkme\phinx;
 
 
 use think\App;
@@ -16,13 +16,13 @@ class MigrationService extends \think\Service{
     {
         $this->app->get('config')->set([
             'commands' => [
-                \ke\phinx\command\Run::class,
-                \ke\phinx\command\Create::class,
-                \ke\phinx\command\Status::class,
-                \ke\phinx\command\Rollback::class,
-                \ke\phinx\command\Breakpoint::class,
-                \ke\phinx\command\seed\Create::class,
-                \ke\phinx\command\seed\Run::class
+                \milkme\phinx\command\Run::class,
+                \milkme\phinx\command\Create::class,
+                \milkme\phinx\command\Status::class,
+                \milkme\phinx\command\Rollback::class,
+                \milkme\phinx\command\Breakpoint::class,
+                \milkme\phinx\command\seed\Create::class,
+                \milkme\phinx\command\seed\Run::class
             ]
         ], 'console') ;
     }

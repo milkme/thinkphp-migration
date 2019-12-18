@@ -6,10 +6,10 @@
 // +----------------------------------------------------------------------
 
 
-namespace ke\phinx\command;
+namespace milkme\phinx\command;
 
 
-use ke\phinx\Command;
+use milkme\phinx\Command;
 use Phinx\Console\PhinxApplication;
 use Phinx\Wrapper\TextWrapper;
 use Symfony\Component\Console\Input\ArrayInput;

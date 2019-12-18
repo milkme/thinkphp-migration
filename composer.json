@@ -6,7 +6,7 @@
         "migration",
         "migrate"
     ],
-    "description": "database migration tools",
+    "description": "database migration tools for ThinkPHP6.0.x",
     "authors": [
         {
             "name": "milkme",
@@ -20,6 +20,6 @@
         "topthink/framework": "*"
     },
     "autoload": {
-        "psr-4": {"ke\\phinx\\": "src/"}
+        "psr-4": {"milkme\\phinx\\": "src/"}
     }
 }
