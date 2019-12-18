@@ -1,6 +1,8 @@
 # thinkphp-migration
 
-**要求ThinkPHP 5.1.***
+[ke/thinkphp-migration](https://github.com/wdaglb/thinkphp-migration) 适配ThinkPHP6.0
+
+**要求ThinkPHP 6.0.***
 
 > 本扩展与官方的区别是什么？
 
@@ -18,26 +20,38 @@ composer require ke/thinkphp-migration
 
 ## Config 配置文件
 
-```
+```php
 <?php
 // /config/migration.php
+
+use think\facade\Env;
 return [
-    'environments'=>[
-        'default_migration_table'=>'phinxlog',
-        'default_database'=>'default',
-        'default'=>[
-            'adapter'=>'mysql',
-            'host'=>'127.0.0.1',
-            'name'=>'',
-            'user'=>'',
-            'pass'=>'',
-            'table_prefix'=>'',
-            'port'=>3306,
-            'charset'=>'utf8',
-            'collation'=>'utf8mb4_unicode_ci'
-        ]
+    'environments'  =>  [
+        'default_migration_table'   =>  'phinxlog',
+        'default_database'          =>  'default',
+        'default'   =>  [
+            'adapter'       =>  Env::get('database.type', 'mysql'),
+            'host'          =>  Env::get('database.hostname', '127.0.0.1'),
+            'name'          =>  Env::get('database.database', ''),
+            'user'          =>  Env::get('database.username', ''),
+            'pass'          =>  Env::get('database.password', ''),
+            'table_prefix'  =>  '',
+            'port'          =>  Env::get('database.port', '3306'),
+            'charset'       =>  'utf8mb4',
+            'collation'     =>  'utf8mb4_unicode_ci'
+        ] ,
     ]
 ];
+```
+
+## 注册服务
+```php
+<?php
+//app/service.php
+
+return [
+    'app\service\MigrationService' ,
+] ;
 ```
 
 ## Breakpoint 命令

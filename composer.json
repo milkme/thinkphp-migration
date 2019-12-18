@@ -1,5 +1,5 @@
 {
-    "name": "ke/thinkphp-migration",
+    "name": "milkme/thinkphp-migration",
     "type": "library",
     "keywords": [
         "phinx",
@@ -9,18 +9,17 @@
     "description": "database migration tools",
     "authors": [
         {
-            "name": "king east",
-            "email": "1207877378@qq.com"
+            "name": "milkme",
+            "email": "darwensh@gmail.com"
         }
     ],
     "require": {
-        "robmorgan/phinx": "^0.11.0"
+        "robmorgan/phinx": "^0.11.*"
     },
     "require-dev":  {
         "topthink/framework": "*"
     },
     "autoload": {
-        "psr-4": {"ke\\phinx\\": "src/"},
-        "files": ["src/bootstrap.php"]
+        "psr-4": {"ke\\phinx\\": "src/"}
     }
 }
