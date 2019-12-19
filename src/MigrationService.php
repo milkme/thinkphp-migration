@@ -14,7 +14,7 @@ class MigrationService extends \think\Service{
      */
     public function register()
     {
-        if (request()->isCgi()) {
+        if (request()->isCli()) {
             $this->app->get('config')->set([
                 'commands' => [
                     \milkme\phinx\command\Run::class,
