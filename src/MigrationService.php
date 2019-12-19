@@ -14,17 +14,19 @@ class MigrationService extends \think\Service{
      */
     public function register()
     {
-        $this->app->get('config')->set([
-            'commands' => [
-                \milkme\phinx\command\Run::class,
-                \milkme\phinx\command\Create::class,
-                \milkme\phinx\command\Status::class,
-                \milkme\phinx\command\Rollback::class,
-                \milkme\phinx\command\Breakpoint::class,
-                \milkme\phinx\command\seed\Create::class,
-                \milkme\phinx\command\seed\Run::class
-            ]
-        ], 'console') ;
+        if (request()->isCgi()) {
+            $this->app->get('config')->set([
+                'commands' => [
+                    \milkme\phinx\command\Run::class,
+                    \milkme\phinx\command\Create::class,
+                    \milkme\phinx\command\Status::class,
+                    \milkme\phinx\command\Rollback::class,
+                    \milkme\phinx\command\Breakpoint::class,
+                    \milkme\phinx\command\seed\Create::class,
+                    \milkme\phinx\command\seed\Run::class
+                ]
+            ], 'console') ;
+        }
     }
 
 }
