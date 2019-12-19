@@ -17,7 +17,7 @@ class Command extends \think\console\Command
 {
     protected function initConfig()
     {
-        $config = Config::get('migration.');
+        $config = Config::get('migration');
         if (empty($config)) {
             throw new Exception('migration config is Empty');
         }
