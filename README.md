@@ -50,7 +50,7 @@ return [
 //app/service.php
 
 return [
-    'app\service\MigrationService' ,
+    'milkme\phinx\MigrationService' ,
 ] ;
 ```
 
